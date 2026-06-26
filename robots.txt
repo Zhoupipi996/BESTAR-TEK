@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block internal/build paths
+Disallow: /assets/
+Disallow: /.jekyll-cache/
+Disallow: /_site/
+
+# Sitemap location
+Sitemap: https://www.bestartek.com/sitemap.xml
