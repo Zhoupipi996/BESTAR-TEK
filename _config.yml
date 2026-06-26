@@ -1,0 +1,60 @@
+# GitHub Pages / Jekyll Configuration
+# BESTAR TEK — www.bestartek.com
+
+# ── Site Info ──
+title:       "BESTAR TEK | Custom Android Tablet & Signage OEM/ODM"
+description: "Trusted OEM/ODM manufacturer of custom Android tablets and commercial displays. Serving global software companies in education, healthcare, hospitality and IoT."
+url:         "https://www.bestartek.com"
+baseurl:     ""
+lang:        "en"
+
+# ── Author ──
+author:
+  name:  "BESTAR TEK"
+  email: "Jocelyn@bestartek.com"
+
+# ── Build ──
+theme:         null
+markdown:      kramdown
+highlighter:   rouge
+permalink:     /:year/:month/:day/:title/
+
+# ── Plugins ──
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# ── Exclude from build ──
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .sass-cache
+  - .jekyll-cache
+
+# ── Collections (for future blog) ──
+collections:
+  posts:
+    output:    true
+    permalink: /blog/:year/:month/:title/
+
+# ── Defaults ──
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout:   post
+      author:   "BESTAR TEK"
+
+# ── SEO ──
+twitter:
+  username: bestartek
+social:
+  name:  BESTAR TEK
+  links:
+    - https://www.linkedin.com/company/bestartek
+    - https://www.facebook.com/bestartek
+
+google_analytics: ""   # Add your GA4 Measurement ID here: G-XXXXXXXXXX

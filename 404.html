@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | BESTAR TEK</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { background: var(--navy); display: flex; flex-direction: column; min-height: 100vh; }
+    .err-wrap {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem 2rem; text-align: center;
+    }
+    .err-code {
+      font-size: clamp(80px, 14vw, 140px); font-weight: 800;
+      color: var(--green); line-height: 1; letter-spacing: -4px;
+      margin-bottom: 0;
+    }
+    .err-title {
+      font-size: clamp(20px, 3vw, 28px); font-weight: 700;
+      color: var(--white); margin: 12px 0 14px;
+    }
+    .err-desc {
+      font-size: 15px; color: rgba(255,255,255,0.5);
+      max-width: 400px; line-height: 1.7; margin-bottom: 32px;
+    }
+    .err-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .err-nav {
+      margin-top: 48px; display: flex; gap: 1.5rem;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .err-nav a {
+      color: rgba(255,255,255,0.4); font-size: 13px;
+      transition: color 0.2s; text-decoration: none;
+    }
+    .err-nav a:hover { color: var(--green); }
+  </style>
+</head>
+<body>
+
+<!-- Minimal nav -->
+<nav class="navbar" style="position:relative">
+  <div class="navbar__inner">
+    <a href="/" class="logo">
+      <div class="logo__mark">BT</div>
+      <div>
+        <div class="logo__text">BESTAR TEK</div>
+        <div class="logo__sub">OEM · ODM · B2B</div>
+      </div>
+    </a>
+    <button class="nav-cta" onclick="location.href='/'">Back to Home</button>
+  </div>
+</nav>
+
+<div class="err-wrap">
+  <div class="err-code">404</div>
+  <h1 class="err-title">Page Not Found</h1>
+  <p class="err-desc">
+    The page you're looking for doesn't exist or has been moved.
+    Let's get you back on track.
+  </p>
+  <div class="err-btns">
+    <a href="/" class="btn btn--primary">← Back to Homepage</a>
+    <a href="/#contact" class="btn btn--outline">Contact Us</a>
+  </div>
+  <nav class="err-nav" aria-label="Helpful links">
+    <a href="/#products">Products</a>
+    <a href="/#solutions">Solutions</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#why">Why Us</a>
+    <a href="mailto:Jocelyn@bestartek.com">Email Us</a>
+  </nav>
+</div>
+
+<footer role="contentinfo" style="padding:20px 2rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06)">
+  <p style="font-size:12px;color:rgba(255,255,255,0.25)">© 2025 BESTAR TEK · Shenzhen, China</p>
+</footer>
+
+</body>
+</html>
