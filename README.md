@@ -1,153 +1,122 @@
-# BESTAR TEK — Official Website
+# BESTAR TEK Website v2.0
 
-**Custom Android Tablet & Digital Signage OEM/ODM Manufacturer**
+**White + Green Professional B2B · Multi-Page · SEO Ready**
 
-> Static B2B website built with pure HTML / CSS / JS — zero dependencies, deploys to GitHub Pages in under 5 minutes.
+> Static site — zero dependencies, GitHub Pages in under 5 minutes.
 
 ---
 
-## 📁 Project Structure
+## 📁 File Structure
 
 ```
 bestartek-website/
-├── index.html              ← Main page (all sections)
-├── _config.yml             ← GitHub Pages config
-├── robots.txt              ← SEO crawler rules
-├── sitemap.xml             ← SEO sitemap
-├── 404.html                ← Custom 404 page
-├── README.md               ← This file
-└── assets/
-    ├── css/
-    │   └── style.css       ← All styles (mobile-first, RTL support)
-    ├── js/
-    │   └── main.js         ← Language switcher, FAQ, form, PCB canvas
-    └── images/
-        ├── favicon.png     ← Replace with your favicon (32×32 px)
-        ├── og-image.jpg    ← Replace with OG image (1200×630 px)
-        └── logo.png        ← Replace with your logo
+├── index.html                    ← Homepage (white theme, all main sections)
+├── products/
+│   ├── android-tablets.html      ← 7 tablet models with full spec tables
+│   └── digital-signage.html      ← 5 signage categories, 20+ models, spec tables
+├── assets/
+│   ├── css/style.css             ← Full stylesheet (white/green theme, responsive)
+│   ├── js/main.js                ← FAQ, lang switcher, nav, form handler
+│   └── images/                   ← Place favicon.png + og-image.jpg here
+├── 404.html                      ← Branded 404 page
+├── sitemap.xml                   ← SEO sitemap (update domain before launch)
+├── robots.txt                    ← SEO crawler rules
+├── _config.yml                   ← GitHub Pages config
+└── .gitignore
 ```
 
 ---
 
-## 🚀 Deploy to GitHub Pages (Step by Step)
+## 🚀 Deploy to GitHub Pages
 
-### Step 1 — Create a GitHub repository
+### Step 1 — Create repository
+1. Go to [github.com/new](https://github.com/new)
+2. Name: `bestartek-website` · Visibility: **Public**
+3. Click **Create repository**
 
-1. Go to [github.com](https://github.com) and sign in (or create a free account)
-2. Click **"New repository"** (green button, top right)
-3. Name it: `bestartek-website` (or `bestartek.github.io` for a root domain)
-4. Set visibility to **Public**
-5. Click **"Create repository"**
+### Step 2 — Upload files
+**Via browser:**
+- Click "uploading an existing file"
+- Drag ALL files AND the `products/` + `assets/` folders
+- Keep folder structure intact
+- Click **Commit changes**
 
-### Step 2 — Upload the files
-
-**Option A — Upload via browser (easiest):**
-1. On your new repository page, click **"uploading an existing file"**
-2. Drag and drop ALL project files/folders into the upload area
-3. Keep folder structure intact (`assets/css/`, `assets/js/`, etc.)
-4. Click **"Commit changes"**
-
-**Option B — Upload via Git (recommended):**
+**Via Git:**
 ```bash
-# Clone your new repo locally
 git clone https://github.com/YOUR_USERNAME/bestartek-website.git
-
-# Copy all project files into the cloned folder
-# Then commit and push:
-cd bestartek-website
+# Copy all project files in, then:
 git add .
-git commit -m "Initial website launch"
+git commit -m "Launch BESTAR TEK website v2"
 git push origin main
 ```
 
 ### Step 3 — Enable GitHub Pages
-
-1. In your repository, go to **Settings** → **Pages** (left sidebar)
-2. Under **"Source"**, select: **Deploy from a branch**
-3. Branch: **main** / Folder: **/ (root)**
-4. Click **Save**
-5. Wait ~60 seconds, then visit: `https://YOUR_USERNAME.github.io/bestartek-website/`
+1. Repository → **Settings** → **Pages**
+2. Source: **Deploy from a branch** → Branch: `main` / `/ (root)`
+3. Click **Save** → Wait ~60 seconds
+4. Visit: `https://YOUR_USERNAME.github.io/bestartek-website/`
 
 ---
 
-## 🌐 Connect Your Custom Domain (bestartek.com)
+## 🌐 Connect Custom Domain
 
-### In GitHub:
-1. Settings → Pages → **Custom domain**
-2. Enter: `www.bestartek.com`
-3. Check **"Enforce HTTPS"**
-4. GitHub will create a `CNAME` file automatically
+### In GitHub Pages settings:
+- Custom domain: `www.bestartek.com`
+- Check ✓ **Enforce HTTPS**
 
-### In your DNS provider (GoDaddy / Cloudflare / Namecheap):
-Add these DNS records:
+### DNS Records (add at your registrar):
+| Type  | Name | Value                   |
+|-------|------|-------------------------|
+| A     | @    | 185.199.108.153         |
+| A     | @    | 185.199.109.153         |
+| A     | @    | 185.199.110.153         |
+| A     | @    | 185.199.111.153         |
+| CNAME | www  | YOUR_USERNAME.github.io |
 
-| Type  | Host  | Value                    | TTL  |
-|-------|-------|--------------------------|------|
-| A     | @     | 185.199.108.153          | Auto |
-| A     | @     | 185.199.109.153          | Auto |
-| A     | @     | 185.199.110.153          | Auto |
-| A     | @     | 185.199.111.153          | Auto |
-| CNAME | www   | YOUR_USERNAME.github.io  | Auto |
-
-> DNS propagation takes 10 minutes to 48 hours.
+> DNS propagation: 15 minutes – 48 hours.
 
 ---
 
-## 📧 Connect the Contact Form (Formspree)
+## 📧 Activate the Contact Form (Formspree)
 
-The form currently points to a placeholder. To activate it:
-
-1. Go to [formspree.io](https://formspree.io) → Sign up free
-2. Click **"New Form"** → Name it "BESTAR TEK Inquiry"
-3. Copy your **Form ID** (looks like: `xpzgkwvn`)
-4. Open `index.html` and find this line (around line 290):
+1. Sign up free at [formspree.io](https://formspree.io)
+2. Create a new form → copy your **Form ID** (e.g. `xpzgkwvn`)
+3. In `index.html` find line ~290:
    ```html
    action="https://formspree.io/f/YOUR_FORM_ID"
    ```
-5. Replace `YOUR_FORM_ID` with your actual ID:
-   ```html
-   action="https://formspree.io/f/xpzgkwvn"
-   ```
-6. In Formspree dashboard, set the **"Reply-to"** email to: `Jocelyn@bestartek.com`
-7. All form submissions will now arrive directly in your inbox
-
-**Free plan:** 50 submissions/month — sufficient for initial launch.
-**Paid plan ($10/mo):** Unlimited submissions + spam filtering + file upload.
+4. Replace `YOUR_FORM_ID` with your actual ID
+5. Set reply-to email in Formspree dashboard: `Jocelyn@bestartek.com`
 
 ---
 
-## 🌍 Multi-Language (EN / ES / AR)
+## 🖼️ Add Required Images
 
-The language switcher is built into `assets/js/main.js`.
+Place these in `assets/images/`:
 
-**To add or edit translations:**
-1. Open `assets/js/main.js`
-2. Find the `const i18n = { ... }` object at the top
-3. Edit the `en`, `es`, or `ar` entries
-4. To add a new language (e.g. French `fr`), copy the `en` block, rename it `fr`, translate, and add a button in `index.html`:
-   ```html
-   <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
-   ```
+| File | Size | Purpose |
+|------|------|---------|
+| `favicon.png` | 32×32 px | Browser tab icon |
+| `og-image.jpg` | 1200×630 px | Social share preview (LinkedIn, WhatsApp) |
+| `logo.png` | 200×60 px | Schema.org logo |
 
-**Arabic RTL:** Handled automatically — when Arabic is selected, `dir="rtl"` is applied to `<html>`.
+**OG Image tip:** Use a clean product photo with BESTAR TEK brand green (#4CBB17) background + white text. This shows when someone shares your URL on LinkedIn or WhatsApp.
 
 ---
 
-## 🔍 SEO Checklist (Before Launch)
+## 🔍 SEO Checklist Before Launch
 
-- [ ] Replace `YOUR_USERNAME` in `_config.yml` and sitemap URLs
-- [ ] Add real `og-image.jpg` (1200 × 630 px, shows on WhatsApp / LinkedIn shares)
-- [ ] Add real `favicon.png` (32 × 32 px)
-- [ ] Submit `sitemap.xml` to [Google Search Console](https://search.google.com/search-console)
-- [ ] Submit `sitemap.xml` to [Bing Webmaster Tools](https://www.bing.com/webmasters)
-- [ ] Verify domain in Google Search Console
-- [ ] Set up [Google Analytics 4](https://analytics.google.com) — add GA4 tag to `<head>` in `index.html`
-- [ ] Register on [Google Business Profile](https://business.google.com) for local SEO
+- [ ] Replace all `www.bestartek.com` references in `sitemap.xml` with actual domain
+- [ ] Add `og-image.jpg` (1200×630 px)
+- [ ] Add `favicon.png`
+- [ ] Replace `YOUR_FORM_ID` in `index.html`
+- [ ] Verify domain in [Google Search Console](https://search.google.com/search-console)
+- [ ] Submit `sitemap.xml` to Google Search Console
+- [ ] Submit to [Bing Webmaster Tools](https://www.bing.com/webmasters)
+- [ ] Add Google Analytics 4 tag (see below)
 
-**Add Google Analytics (optional):**
-In `index.html`, add before `</head>`:
+**Add GA4 Analytics** — paste before `</head>` in all HTML files:
 ```html
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -156,78 +125,78 @@ In `index.html`, add before `</head>`:
   gtag('config', 'G-XXXXXXXXXX');
 </script>
 ```
-Replace `G-XXXXXXXXXX` with your actual GA4 Measurement ID.
 
 ---
 
-## 📝 Blog (Phase 2 — Recommended)
-
-Adding a blog boosts SEO significantly by targeting long-tail keywords like:
-- *"custom Android tablet for education manufacturer"*
-- *"OEM digital signage meeting room"*
-- *"white label Android tablet healthcare"*
-
-**Simplest approach — GitHub Pages + Jekyll:**
-1. Enable Jekyll in `_config.yml` (already configured)
-2. Create a `_posts/` folder
-3. Add posts as Markdown files named `YYYY-MM-DD-title.md`
-4. Each post starts with frontmatter:
-   ```yaml
-   ---
-   layout: post
-   title: "How to Choose the Right Android Chipset for Your Tablet Project"
-   date: 2025-10-01
-   category: product-guide
-   ---
-   ```
-
-**Suggested first 5 blog posts:**
-1. RK3566 vs RK3588 — Which chipset for your project? (SEO: chipset comparison)
-2. What to Know Before Ordering Custom Android Tablets from China (SEO: buyer guide)
-3. How BESTAR TEK Delivers 30-45 Day OEM Production (SEO: production process)
-4. Top 5 Use Cases for POE Meeting Room Tablets in 2025 (SEO: meeting room display)
-5. Android Kiosk Mode: A Complete Setup Guide for OEM Clients (SEO: kiosk Android)
-
----
-
-## ✏️ Common Edits
+## ✏️ Common Content Edits
 
 | What to change | Where |
 |---|---|
-| Contact email | `index.html` — CI item + form `_subject` |
-| Phone number | `index.html` — CI item |
-| Company address | `index.html` — CI item + Schema.org |
+| Contact email | `index.html` — contact section |
+| Phone number | `index.html` — contact section |
+| Company address | `index.html` — Schema.org + contact section |
 | Brand color | `assets/css/style.css` → `--green: #4CBB17` |
-| Stats (30K+, 15+…) | `index.html` — `.hero__stats` section |
+| Hero headline | `index.html` → `#hero-h1` |
 | FAQ questions | `assets/js/main.js` → `const faqs = [...]` |
-| Nav links | `index.html` — `.nav-links` + `.mobile-nav` |
+| Stats (30K+, 15+…) | `index.html` → `.hero__stats` section |
+| Product specs | `products/android-tablets.html` or `products/digital-signage.html` |
+| Formspree ID | `index.html` → form `action` attribute |
 
 ---
 
-## 🛠️ Local Preview (No Install Required)
+## 🌍 Languages (EN / ES / AR)
 
-**Option A — VS Code Live Server:**
-1. Install [VS Code](https://code.visualstudio.com)
-2. Install the **Live Server** extension
-3. Right-click `index.html` → "Open with Live Server"
-4. Opens at `http://127.0.0.1:5500`
+Translation strings are in `assets/js/main.js`:
+```js
+const i18n = {
+  en: { h1: 'Hardware Built for...', ... },
+  es: { h1: 'Hardware Diseñado para...', ... },
+  ar: { h1: '...', dir: 'rtl' },
+};
+```
+Arabic automatically switches the whole page to RTL layout.
 
-**Option B — Python (built-in):**
-```bash
-cd bestartek-website
-python3 -m http.server 8000
-# Open: http://localhost:8000
+To add French: copy the `en` block, rename to `fr`, translate, add a button in the nav HTML:
+```html
+<button class="lang-btn" data-lang="fr" onclick="setLang('fr',event)">FR</button>
 ```
 
 ---
 
-## 📞 Support
+## 🌱 Blog (Phase 2 — Recommended for SEO)
+
+A blog targeting long-tail keywords can significantly improve organic traffic. Suggested first posts:
+1. "RK3566 vs RK3588 — Choosing the Right Chipset for Your Android Project"
+2. "How to Source a Custom Android Tablet from China: A B2B Buyer's Guide"
+3. "Top 5 Use Cases for POE Meeting Room Tablets in 2025"
+4. "Android Kiosk Mode Setup Guide for OEM Developers"
+5. "What Is the Difference Between OEM and ODM Tablet Manufacturing?"
+
+Implementation: Create `blog/` folder, add posts as HTML files, link from footer.
+
+---
+
+## 🛠️ Local Preview
+
+```bash
+# Option A — Python
+cd bestartek-website
+python3 -m http.server 8000
+# Open: http://localhost:8000
+
+# Option B — VS Code Live Server extension
+# Right-click index.html → Open with Live Server
+```
+
+---
+
+## 📞 Contact
 
 **BESTAR TEK**
 - Email: Jocelyn@bestartek.com
 - WhatsApp: +86-134-76144359
 - Website: www.bestartek.com
+- Address: Futian District, Shenzhen, Guangdong, China
 
 ---
-
-*Built with ♥ for BESTAR TEK — 2025*
+*BESTAR TEK Website v2.0 — Built 2025*
