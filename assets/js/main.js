@@ -1,363 +1,162 @@
 /* ============================================================
-   BESTAR TEK — main.js
-   Version: 1.0 | 2025
+   BESTAR TEK — main.js  v2.0
    ============================================================ */
-
 'use strict';
 
-/* ── i18n strings ── */
+/* ── i18n ── */
 const i18n = {
-  en: {
-    dir:    'ltr',
-    tag:    '✦ Trusted Global OEM / ODM Partner',
-    h1:     'Hardware Built for <span>Your Software</span> to Scale',
-    desc:   'Custom Android tablets & commercial displays — white-labeled, firmware-ready, globally certified. Serving software companies in education, healthcare, hospitality and IoT worldwide.',
-    btn1:   'Request Custom Quote',
-    btn2:   'Explore Products',
-    s1:     'Units / Month Capacity',
-    s2:     'Years R&D Experience',
-    s3:     'Countries Served',
-    s4:     'Min. Order Quantity',
-    cta:    'Get Quote',
-  },
-  es: {
-    dir:    'ltr',
-    tag:    '✦ Socio OEM / ODM de Confianza Global',
-    h1:     'Hardware Diseñado para <span>Tu Software</span>',
-    desc:   'Tabletas Android y pantallas comerciales personalizadas — marca blanca, firmware propio, certificación internacional. Para empresas de software en educación, salud, hostelería e IoT.',
-    btn1:   'Solicitar Cotización',
-    btn2:   'Ver Productos',
-    s1:     'Unidades / Mes',
-    s2:     'Años de I+D',
-    s3:     'Países Atendidos',
-    s4:     'Cantidad Mínima',
-    cta:    'Cotizar',
-  },
-  ar: {
-    dir:    'rtl',
-    tag:    '✦ شريك OEM / ODM موثوق عالمياً',
-    h1:     'أجهزة مصممة لـ <span>برنامجك</span> للتوسع',
-    desc:   'أجهزة لوحية أندرويد وشاشات تجارية مخصصة — علامة بيضاء، نظام مخصص، معتمد عالمياً. نخدم شركات البرمجيات في التعليم والرعاية الصحية والضيافة وإنترنت الأشياء حول العالم.',
-    btn1:   'طلب عرض سعر',
-    btn2:   'استعراض المنتجات',
-    s1:     'وحدة / شهر',
-    s2:     'سنوات خبرة R&D',
-    s3:     'دولة مخدومة',
-    s4:     'الحد الأدنى للطلب',
-    cta:    'عرض سعر',
-  },
+  en:{dir:'ltr',tag:'Trusted Global OEM / ODM Partner',h1:'Hardware Built for <span>Your Software</span> to Scale Globally',desc:'Custom Android tablets & commercial displays — white-labeled, firmware-ready, globally certified. MOQ 500 units. Trusted by software companies across education, healthcare, hospitality and IoT.',btn1:'Request a Quote',btn2:'Explore Products',s1:'Units / Month',s2:'Years R&D',s3:'Countries',s4:'Min. MOQ',cta:'Get Quote'},
+  es:{dir:'ltr',tag:'Socio OEM/ODM de Confianza Global',h1:'Hardware Diseñado para que <span>Tu Software</span> Escale Globalmente',desc:'Tabletas Android y pantallas comerciales personalizadas — marca blanca, firmware propio, certificación internacional. MOQ 500 unidades.',btn1:'Solicitar Cotización',btn2:'Ver Productos',s1:'Unidades/Mes',s2:'Años I+D',s3:'Países',s4:'MOQ Mínimo',cta:'Cotizar'},
+  ar:{dir:'rtl',tag:'شريك OEM/ODM موثوق عالمياً',h1:'أجهزة مصممة لـ <span>برنامجك</span> للتوسع العالمي',desc:'أجهزة لوحية وشاشات تجارية مخصصة بالكامل — علامة بيضاء، نظام مخصص، معتمد دولياً. الحد الأدنى للطلب 500 وحدة.',btn1:'طلب عرض سعر',btn2:'استعراض المنتجات',s1:'وحدة/شهر',s2:'سنوات R&D',s3:'دولة',s4:'الحد الأدنى',cta:'عرض سعر'},
 };
 
-/* ── FAQ data ── */
-const faqs = [
-  {
-    q: 'What is your minimum order quantity (MOQ)?',
-    a: 'Our standard MOQ is <strong>500 units</strong> for most custom tablet and signage projects. For prototyping and market testing, we can accommodate smaller pilot runs — contact us to discuss. Volume orders (1,000+ units) unlock additional pricing tiers and dedicated support.',
-  },
-  {
-    q: 'Can you customize the Android firmware?',
-    a: 'Yes — full AOSP-level customization. We can pre-install your application, configure kiosk/lock-down modes, set custom boot animation and boot logo, embed your brand name in system settings, enable or disable specific hardware features, and integrate OTA update support.',
-  },
-  {
-    q: 'How long does production take from approval to delivery?',
-    a: '<strong>Prototype sample:</strong> 5–15 days depending on complexity. <strong>Mass production:</strong> 21–45 days after sample sign-off. We provide production status updates every 3–5 days and track every shipment to delivery.',
-  },
-  {
-    q: 'What certifications do your products carry?',
-    a: 'Our products support <strong>CE, FCC, and RoHS</strong> certifications. Our factory holds ISO 9001 Quality Management certification. We can assist with additional regional certifications (UKCA, KC, PSE, etc.) — please specify requirements in your inquiry.',
-  },
-  {
-    q: 'Can I receive a sample before mass production?',
-    a: 'Absolutely. We strongly recommend a sample validation phase. We produce a working prototype with your specifications for internal testing, firmware validation, and software integration testing before committing to mass production. Sample timelines are 5–15 days.',
-  },
-  {
-    q: 'Do you support white-label and OEM branding?',
-    a: 'Yes, full OEM service. We customize chassis branding, packaging design, boot logo, Android system name, firmware identity, and documentation. The final product carries your brand — not ours. We also support co-branding arrangements.',
-  },
-  {
-    q: 'What chipsets and Android versions are available?',
-    a: 'We support <strong>MediaTek, Rockchip (RK3566, RK3568, RK3588), Allwinner, and Spreadtrum</strong> chipsets. Android versions range from 6.0 to 13. For new projects we recommend RK3566 (Android 11/13) for cost-efficiency, or RK3588 (Android 12) for high-performance applications.',
-  },
-  {
-    q: 'What after-sales support do you provide?',
-    a: 'All products include a <strong>12-month warranty</strong> with 100% IPQC & OQC inspection before shipping. We ship key spare parts alongside bulk orders to support field replacement. Our engineering team provides ongoing firmware update support and troubleshooting assistance.',
-  },
-  {
-    q: 'Can you pre-install our application on the devices?',
-    a: 'Yes. We can pre-install your APK(s), configure auto-launch on boot, enable kiosk mode to prevent navigation outside your app, configure required system permissions, and set default system language and timezone for your target market.',
-  },
-  {
-    q: 'Do you ship internationally, and what are typical lead times?',
-    a: 'We ship worldwide via <strong>sea freight, air freight, and express courier</strong> (DHL / FedEx / UPS). We handle all export documentation, including commercial invoices, packing lists, and certificates of origin. Typical destinations include the US, UK, EU, Australia, Japan, Canada, and the Middle East.',
-  },
+/* ── FAQ ── */
+const faqs=[
+  {q:'What is your minimum order quantity (MOQ)?',a:'Our standard MOQ is <strong>500 units</strong> for custom OEM/ODM projects. For pilot runs or market testing we can discuss smaller quantities. Volume orders (1,000+ units) receive tiered pricing discounts and priority production scheduling.'},
+  {q:'Can you fully customize the Android firmware?',a:'Yes — full AOSP-level access. Services include: pre-installed APKs, kiosk/lock-down mode, custom boot animation & logo, system language/timezone defaults, hardware permission management, and OTA update integration.'},
+  {q:'How long does production take from approval?',a:'<strong>Prototype sample:</strong> 5–15 days. <strong>Mass production:</strong> 21–45 days after sample sign-off. We send production status updates every 3–5 days and full shipment tracking until delivery.'},
+  {q:'What certifications do your products carry?',a:'CE, FCC, and RoHS certifications are standard. Our factory is <strong>ISO 9001</strong> certified. We assist with regional certifications on request: UKCA, KC (Korea), PSE (Japan), EAC, etc.'},
+  {q:'Can I receive a sample before mass production?',a:'Absolutely — and we strongly recommend it. A working prototype validates firmware, hardware integration, and your software stack before committing to mass production. Sample stage: 5–15 days depending on complexity.'},
+  {q:'Do you support full white-label OEM branding?',a:'Yes. We customize: device chassis marking, retail packaging design, boot logo, Android system identity, firmware name, and all documentation. The product ships as <strong>your brand</strong>, not ours.'},
+  {q:'Which chipsets and Android versions are available?',a:'Chipsets: <strong>MediaTek (Helio G99, MT6750, MT8183), Rockchip (RK3566, RK3568, RK3588), Unisoc (T616)</strong>. Android versions: 8.1 through 14. For new projects, we recommend RK3566/Unisoc T616 (Android 13) for cost efficiency, or RK3588 / MediaTek Helio G99 for high-performance needs.'},
+  {q:'What after-sales support is included?',a:'Standard <strong>12-month warranty</strong> on all products. 100% IPQC & OQC inspection before shipment. Key spare parts shipped with bulk orders. Engineering team provides ongoing firmware updates and field support.'},
+  {q:'Can you pre-install our software application?',a:'Yes. We pre-install your APK(s), configure auto-launch on boot, set kiosk mode, apply required system permissions, and can implement MDM enrollment for remote device management.'},
+  {q:'Do you ship internationally?',a:'Yes — worldwide via <strong>sea freight, air freight, and express courier</strong> (DHL / FedEx / UPS). We handle all export documentation: commercial invoices, packing lists, certificates of origin. Common destinations: USA, UK, EU, Australia, Japan, Middle East.'},
 ];
 
-/* ── DOM helpers ── */
-const $ = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+/* ── DOM utils ── */
+const $=(s,c=document)=>c.querySelector(s);
+const $$=(s,c=document)=>[...c.querySelectorAll(s)];
 
-/* ── Smooth scroll ── */
-function scrollTo(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+/* ── Scroll helper ── */
+function scrollTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 
-/* ── Language switcher ── */
-function setLang(code) {
-  const t = i18n[code];
-  if (!t) return;
-
-  /* Save preference */
-  try { localStorage.setItem('bt_lang', code); } catch (_) {}
-
-  /* Direction */
-  document.documentElement.setAttribute('dir', t.dir);
-  document.documentElement.setAttribute('lang', code);
-
-  /* Update content */
-  const set = (id, val, html = false) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    if (html) el.innerHTML = val;
-    else el.textContent = val;
-  };
-
-  set('hero-tag',  t.tag);
-  set('hero-h1',   t.h1, true);
-  set('hero-desc', t.desc);
-  set('hero-btn1', t.btn1);
-  set('hero-btn2', t.btn2);
-  set('stat-1',    t.s1);
-  set('stat-2',    t.s2);
-  set('stat-3',    t.s3);
-  set('stat-4',    t.s4);
-  set('nav-cta',   t.cta);
-
-  /* Active button highlight */
-  $$('.lang-btn').forEach(b => b.classList.remove('active'));
-  const active = $(`.lang-btn[data-lang="${code}"]`);
-  if (active) active.classList.add('active');
+/* ── Language ── */
+function setLang(code,e){
+  const t=i18n[code];if(!t)return;
+  try{localStorage.setItem('bt_lang',code);}catch(_){}
+  document.documentElement.setAttribute('dir',t.dir);
+  document.documentElement.setAttribute('lang',code);
+  const s=(id,v,html=false)=>{const el=document.getElementById(id);if(el){if(html)el.innerHTML=v;else el.textContent=v;}};
+  s('hero-tag',t.tag);s('hero-h1',t.h1,true);s('hero-desc',t.desc);
+  s('hero-btn1',t.btn1);s('hero-btn2',t.btn2);
+  s('stat-1',t.s1);s('stat-2',t.s2);s('stat-3',t.s3);s('stat-4',t.s4);
+  const nc=$('#nav-cta');if(nc)nc.textContent=t.cta;
+  $$('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(e)e.target.classList.add('active');
+  else{const ab=$(`.lang-btn[data-lang="${code}"]`);if(ab)ab.classList.add('active');}
 }
 
 /* ── Hero card switcher ── */
-const cardData = {
-  tablet: {
-    title:  'Custom Android Tablet',
-    badge:  'Android 11–13',
-    sz:     '8" – 21"',
-    specs:  [
-      { k: 'Chipset',     v: 'RK3566 / RK3588' },
-      { k: 'RAM',         v: '2 – 8 GB' },
-      { k: 'Storage',     v: '16 – 256 GB' },
-      { k: 'Connectivity',v: 'WiFi / 4G / POE' },
-    ],
-  },
-  signage: {
-    title:  'Commercial Display',
-    badge:  'POE Supported',
-    sz:     '8" – 32"',
-    specs:  [
-      { k: 'Form Factor', v: 'Wall / Desktop' },
-      { k: 'Interface',   v: 'RJ45 + POE' },
-      { k: 'Resolution',  v: '1080p / 4K' },
-      { k: 'OS',          v: 'Android 11–13' },
-    ],
-  },
+const cardData={
+  tablet:{title:'Custom Android Tablet',badge:'Android 11–14',sz:'7" – 15.6"',specs:[{k:'Chipset',v:'Helio G99 / T616'},{k:'RAM',v:'6 – 8 GB'},{k:'Storage',v:'128 – 256 GB'},{k:'OS',v:'Android 11–14'}]},
+  signage:{title:'Commercial Display',badge:'POE Supported',sz:'8" – 32"',specs:[{k:'Form Factor',v:'Wall / Desktop'},{k:'Power',v:'POE + DC Jack'},{k:'Resolution',v:'1080p / 4K'},{k:'OS',v:'Android 11–13'}]},
 };
-
-function switchCard(type, btn) {
-  $$('.card__sw-btn').forEach(b => b.classList.remove('active'));
+function switchCard(type,btn){
+  $$('.hc-sw').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-
-  const d = cardData[type];
-  if (!d) return;
-
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set('hc-title', d.title);
-  set('hc-badge', d.badge);
-  set('hc-sz',    d.sz);
-
-  const specsEl = document.getElementById('hc-specs');
-  if (specsEl) {
-    specsEl.innerHTML = d.specs.map(s => `
-      <div class="spec-item">
-        <div class="sk">${s.k}</div>
-        <div class="sv">${s.v}</div>
-      </div>`).join('');
-  }
+  const d=cardData[type];if(!d)return;
+  const s=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  s('hc-title',d.title);s('hc-badge',d.badge);s('hc-sz',d.sz);
+  const sp=document.getElementById('hc-specs');
+  if(sp)sp.innerHTML=d.specs.map(s=>`<div class="hc-spec"><div class="hc-spec-k">${s.k}</div><div class="hc-spec-v">${s.v}</div></div>`).join('');
 }
 
-/* ── FAQ accordion ── */
-function buildFAQ() {
-  const colA = document.getElementById('faq-col-a');
-  const colB = document.getElementById('faq-col-b');
-  if (!colA || !colB) return;
-
-  const half = Math.ceil(faqs.length / 2);
-  const cols  = [faqs.slice(0, half), faqs.slice(half)];
-
-  [colA, colB].forEach((col, ci) => {
-    col.innerHTML = cols[ci].map((f, i) => {
-      const id = `faq-${ci}-${i}`;
-      return `
-        <div class="faq-item" id="${id}">
-          <div class="faq-q" role="button" aria-expanded="false"
-               aria-controls="${id}-body" onclick="toggleFAQ('${id}')">
-            <span class="faq-q__text">${f.q}</span>
-            <span class="faq-icon" aria-hidden="true">
-              <svg viewBox="0 0 14 14">
-                <line x1="7" y1="2" x2="7" y2="12"/>
-                <line x1="2" y1="7" x2="12" y2="7"/>
-              </svg>
-            </span>
-          </div>
-          <div class="faq-a" id="${id}-body" role="region">
-            <p>${f.a}</p>
-          </div>
-        </div>`;
+/* ── FAQ ── */
+function buildFAQ(){
+  const a=document.getElementById('faq-col-a');
+  const b=document.getElementById('faq-col-b');
+  if(!a&&!b)return;
+  const half=Math.ceil(faqs.length/2);
+  [[a,0],[b,1]].forEach(([col,ci])=>{
+    if(!col)return;
+    col.innerHTML=faqs.slice(ci*half,ci*half+half).map((f,i)=>{
+      const id=`faq-${ci}-${i}`;
+      return `<div class="faq-item" id="${id}"><div class="faq-q" onclick="toggleFAQ('${id}')" role="button" aria-expanded="false"><span class="faq-q__text">${f.q}</span><span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></span></div><div class="faq-a" role="region"><p>${f.a}</p></div></div>`;
     }).join('');
   });
 }
-
-function toggleFAQ(id) {
-  const item   = document.getElementById(id);
-  if (!item) return;
-  const isOpen = item.classList.contains('open');
-
-  /* Close all */
-  $$('.faq-item.open').forEach(el => {
-    el.classList.remove('open');
-    const btn = el.querySelector('.faq-q');
-    if (btn) btn.setAttribute('aria-expanded', 'false');
-  });
-
-  /* Open clicked if it was closed */
-  if (!isOpen) {
-    item.classList.add('open');
-    const btn = item.querySelector('.faq-q');
-    if (btn) btn.setAttribute('aria-expanded', 'true');
-  }
+function toggleFAQ(id){
+  const item=document.getElementById(id);if(!item)return;
+  const isOpen=item.classList.contains('open');
+  $$('.faq-item.open').forEach(el=>{el.classList.remove('open');const b=el.querySelector('.faq-q');if(b)b.setAttribute('aria-expanded','false');});
+  if(!isOpen){item.classList.add('open');const b=item.querySelector('.faq-q');if(b)b.setAttribute('aria-expanded','true');}
 }
 
-/* ── Sticky nav scroll effect ── */
-function initNavScroll() {
-  const nav = document.getElementById('main-nav');
-  if (!nav) return;
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+/* ── Sticky nav ── */
+function initNavScroll(){
+  const nav=document.getElementById('main-nav');if(!nav)return;
+  const fn=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+  window.addEventListener('scroll',fn,{passive:true});fn();
 }
 
-/* ── Mobile hamburger ── */
-function initHamburger() {
-  const btn   = document.getElementById('hamburger');
-  const menu  = document.getElementById('mobile-nav');
-  if (!btn || !menu) return;
-
-  btn.addEventListener('click', () => {
-    const open = menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-    btn.querySelectorAll('span')[1].style.opacity = open ? '0' : '1';
+/* ── Mobile nav ── */
+function initHamburger(){
+  const btn=document.getElementById('hamburger');
+  const menu=document.getElementById('mobile-nav');
+  if(!btn||!menu)return;
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
   });
+  $$('a',menu).forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');btn.setAttribute('aria-expanded','false');}));
+}
 
-  /* Close on link click */
-  $$('a', menu).forEach(a => {
-    a.addEventListener('click', () => {
-      menu.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+/* ── Contact form ── */
+function initContactForm(){
+  const form=document.getElementById('contact-form');if(!form)return;
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    const btn=form.querySelector('.form-submit');
+    const orig=btn.textContent;
+    btn.textContent='Sending…';btn.disabled=true;
+    try{
+      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+      if(res.ok){
+        btn.textContent='✓ Sent! We\'ll reply within 24 hours';
+        btn.style.background='var(--green-d)';form.reset();
+      }else throw new Error();
+    }catch{
+      btn.textContent='Error — please email us directly';
+      btn.style.background='#c0392b';btn.disabled=false;
+    }
+    setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.disabled=false;},6000);
+  });
+}
+
+/* ── Product filter tabs ── */
+function initFilterTabs(){
+  $$('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const group=btn.getAttribute('data-group')||'all';
+      const container=btn.closest('section')||document;
+      $$('.filter-btn',container).forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      $$('.model-card',container).forEach(card=>{
+        const cat=card.getAttribute('data-cat')||'';
+        card.style.display=(group==='all'||cat===group)?'flex':'none';
+      });
     });
   });
 }
 
-/* ── PCB canvas background ── */
-function drawPCB() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W   = canvas.offsetWidth;
-  const H   = canvas.offsetHeight;
-  canvas.width  = W;
-  canvas.height = H;
-
-  ctx.strokeStyle = 'rgba(76,187,23,0.7)';
-  ctx.lineWidth   = 0.7;
-
-  const step = 54;
-  const cols = Math.floor(W / step);
-  const rows = Math.floor(H / step);
-
-  for (let r = 0; r <= rows; r++) {
-    for (let c = 0; c <= cols; c++) {
-      const x = c * step + step / 2;
-      const y = r * step + step / 2;
-
-      if (Math.random() > 0.42) {
-        ctx.beginPath();
-        ctx.arc(x, y, 1.8, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(76,187,23,0.5)';
-        ctx.fill();
-      }
-      if (Math.random() > 0.5 && c < cols) {
-        ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + step, y); ctx.stroke();
-      }
-      if (Math.random() > 0.5 && r < rows) {
-        ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y + step); ctx.stroke();
-      }
-    }
-  }
-}
-
-/* ── Contact form ── */
-function initContactForm() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('.form-submit');
-    const orig = btn.textContent;
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-
-    try {
-      const res = await fetch(form.action, {
-        method:  'POST',
-        body:    new FormData(form),
-        headers: { Accept: 'application/json' },
-      });
-
-      if (res.ok) {
-        btn.textContent = '✓ Inquiry Sent — We\'ll Reply Within 24h';
-        btn.style.background = 'var(--green-d)';
-        form.reset();
-      } else {
-        throw new Error('Server error');
-      }
-    } catch {
-      btn.textContent = 'Error — Please Email Us Directly';
-      btn.style.background = '#c0392b';
-      btn.disabled = false;
-    }
-
-    setTimeout(() => {
-      btn.textContent = orig;
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 5000);
-  });
+/* ── Intersection Observer (fade-in) ── */
+function initAnimations(){
+  if(!('IntersectionObserver' in window))return;
+  const els=$$('.model-card, .sol-card, .why-item, .metric-card, .cat-card');
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='translateY(0)';}});
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .45s ease, transform .45s ease';obs.observe(el);});
 }
 
 /* ── Init ── */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded',()=>{
   initNavScroll();
   initHamburger();
   buildFAQ();
-  drawPCB();
   initContactForm();
-
-  /* Restore saved language */
-  try {
-    const saved = localStorage.getItem('bt_lang');
-    if (saved && i18n[saved]) setLang(saved);
-  } catch (_) {}
+  initFilterTabs();
+  initAnimations();
+  try{const s=localStorage.getItem('bt_lang');if(s&&i18n[s])setLang(s);}catch(_){}
 });
