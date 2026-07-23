@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /_site/
-Disallow: /.jekyll-cache/
 Sitemap: https://www.bestartek.com/sitemap.xml

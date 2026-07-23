@@ -2,78 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <url>
-    <loc>https://www.bestartek.com/</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+  <url><loc>https://www.bestartek.com/</loc>
+    <lastmod>2025-09-01</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bestartek.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.bestartek.com/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.bestartek.com/?lang=ar"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bestartek.com/"/>
   </url>
 
-  <url>
-    <loc>https://www.bestartek.com/products/android-tablets.html</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
+  <url><loc>https://www.bestartek.com/products/android-tablets.html</loc>
+    <lastmod>2025-09-01</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
 
-  <url>
-    <loc>https://www.bestartek.com/products/digital-signage.html</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
+  <url><loc>https://www.bestartek.com/products/android-tablets.html#t70</loc>
+    <lastmod>2025-09-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
-  <url>
-    <loc>https://www.bestartek.com/products/android-tablets.html#vp20</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
+  <url><loc>https://www.bestartek.com/products/android-tablets.html#t20</loc>
+    <lastmod>2025-09-01</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
 
-  <url>
-    <loc>https://www.bestartek.com/products/android-tablets.html#t70</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
+  <url><loc>https://www.bestartek.com/products/digital-signage.html</loc>
+    <lastmod>2025-09-01</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
 
-  <url>
-    <loc>https://www.bestartek.com/products/digital-signage.html#meeting</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
+  <url><loc>https://www.bestartek.com/products/digital-signage.html#meeting</loc>
+    <lastmod>2025-09-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
-  <url>
-    <loc>https://www.bestartek.com/products/digital-signage.html#smarthome</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
+  <url><loc>https://www.bestartek.com/products/digital-signage.html#smarthome</loc>
+    <lastmod>2025-09-01</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
 
-  <url>
-    <loc>https://www.bestartek.com/#solutions</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
+  <url><loc>https://www.bestartek.com/blog/index.html</loc>
+    <lastmod>2025-09-01</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
 
-  <url>
-    <loc>https://www.bestartek.com/#faq</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
+  <url><loc>https://www.bestartek.com/blog/rk3566-vs-rk3588-android-chipset-guide.html</loc>
+    <lastmod>2025-06-01</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
 
-  <url>
-    <loc>https://www.bestartek.com/#contact</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
+  <url><loc>https://www.bestartek.com/blog/custom-android-tablet-education-oem.html</loc>
+    <lastmod>2025-05-01</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+
+  <url><loc>https://www.bestartek.com/blog/poe-meeting-room-tablet-guide.html</loc>
+    <lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+
+  <url><loc>https://www.bestartek.com/blog/oem-vs-odm-android-tablet.html</loc>
+    <lastmod>2025-03-01</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+
+  <url><loc>https://www.bestartek.com/#contact</loc>
+    <lastmod>2025-09-01</lastmod><changefreq>monthly</changefreq><priority>0.90</priority></url>
 
 </urlset>
