@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Contact & RFQ | Bestar</title>
+<meta name="description" content="Start an OEM/ODM inquiry with Bestar for Android tablets, E-ink devices, or electric food waste disposers — form adjusts by engagement tier.">
+<link rel="canonical" href="https://www.bestartek.com/contact.html">
+
+
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .tier-select{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0 28px;}
+  .tier-select label{
+    border:1px solid var(--line);padding:14px 12px;font-size:13px;text-align:center;cursor:pointer;
+    display:flex;flex-direction:column;gap:4px;
+  }
+  .tier-select input{margin:0 0 6px;}
+  .tier-select .t-num{font-family:var(--f-mono);color:var(--steel);font-size:12px;}
+  .form-fields{display:none;}
+  .form-fields.active{display:grid;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px;}
+  .form-grid .full{grid-column:1/-1;}
+  @media (max-width:700px){.form-grid,.tier-select{grid-template-columns:1fr 1fr;}}
+  @media (max-width:480px){.tier-select{grid-template-columns:1fr;}}
+  label.field-label{display:block;font-size:12.5px;font-family:var(--f-mono);color:var(--muted);margin-bottom:6px;}
+  input[type=text],input[type=email],select,textarea{
+    width:100%;padding:11px 12px;border:1px solid var(--line);background:var(--white);
+    font-family:var(--f-body);font-size:14.5px;color:var(--ink);border-radius:var(--radius);
+  }
+  textarea{resize:vertical;min-height:100px;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg class="mark" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" stroke="#6FA8DC" stroke-width="1.4"/><path d="M7 13h5V7M14 13h5v6" stroke="#6FA8DC" stroke-width="1.4"/><circle cx="12" cy="13" r="1.4" fill="#6FA8DC"/></svg>
+      BESTAR
+    </a>
+    <nav class="main-nav">
+      <a href="about.html">About</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="smart-devices/index.html">Smart Devices</a>
+      <a href="eco-appliances/index.html">Eco Appliances</a>
+      <a href="capabilities/index.html">Capabilities</a>
+      <a href="resources/index.html">Resources</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="nav-cta">Talk to Our Team</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="about.html">About</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="smart-devices/index.html">Smart Devices</a>
+    <a href="eco-appliances/index.html">Eco Appliances</a>
+    <a href="capabilities/index.html">Capabilities</a>
+    <a href="resources/index.html">Resources</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Talk to Our Team</a>
+  </div>
+</header>
+
+<section class="hero" style="padding:56px 0 48px;">
+  <div class="container">
+    <div class="dim-label on-dark"><span class="tick-line"></span><span>Contact &amp; RFQ</span></div>
+    <h1 style="font-size:36px;max-width:22ch;">Tell us where you are, we'll ask the right questions</h1>
+    <p class="lede" style="margin-top:14px;">Pick the tier that fits your project — the form below changes to ask only what we actually need at that stage.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="max-width:820px;">
+    <form id="contact-form">
+      <label class="field-label">Which tier fits your project?</label>
+      <div class="tier-select">
+        <label><span class="t-num">TIER 1</span><input type="radio" name="tier" value="stock">Stock &amp; Small-Batch</label>
+        <label><span class="t-num">TIER 2</span><input type="radio" name="tier" value="light-oem">Light OEM</label>
+        <label><span class="t-num">TIER 3</span><input type="radio" name="tier" value="odm">Full ODM/OEM</label>
+        <label><span class="t-num">TIER 4</span><input type="radio" name="tier" value="integration">System Integration</label>
+      </div>
+
+      <div class="form-grid">
+        <div>
+          <label class="field-label" for="name">Name</label>
+          <input id="name" type="text" required>
+        </div>
+        <div>
+          <label class="field-label" for="company">Company</label>
+          <input id="company" type="text">
+        </div>
+        <div>
+          <label class="field-label" for="email">Email</label>
+          <input id="email" type="email" required>
+        </div>
+        <div>
+          <label class="field-label" for="division">Division / product</label>
+          <select id="division">
+            <option>Smart Devices — Tablet PC</option>
+            <option>Smart Devices — E-ink Tablet</option>
+            <option>Smart Devices — Digital Signage / Integration</option>
+            <option>Eco Appliances — Food Waste Disposer</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <!-- Tier 1 / 2 fields: kept simple -->
+        <div class="full basic-field">
+          <label class="field-label" for="model">Product model (if known)</label>
+          <input id="model" type="text" placeholder="e.g. 10.1&Prime; 5G WIFI Tablet with Stylus Pen">
+        </div>
+        <div class="basic-field">
+          <label class="field-label" for="est-qty">Estimated quantity</label>
+          <input id="est-qty" type="text" placeholder="e.g. 500&ndash;1,000 units">
+        </div>
+        <div class="basic-field">
+          <label class="field-label" for="market">Target market</label>
+          <input id="market" type="text" placeholder="e.g. Germany, retail channel">
+        </div>
+
+        <!-- Tier 3 / 4 fields: pre-qualification, shown for odm/integration -->
+        <div class="full odm-field" style="display:none;">
+          <label class="field-label" for="annual-volume">Estimated annual purchase volume</label>
+          <input id="annual-volume" type="text" placeholder="e.g. 5,000&ndash;10,000 units / year">
+        </div>
+        <div class="full odm-field" style="display:none;">
+          <label class="field-label" for="other-supplier">Are you already talking to another supplier for this project?</label>
+          <select id="other-supplier">
+            <option>No</option>
+            <option>Yes, early stage</option>
+            <option>Yes, advanced stage</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label class="field-label" for="message">Project details</label>
+          <textarea id="message" placeholder="Spec, certifications needed, timeline..."></textarea>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" type="submit" style="margin-top:22px;border:none;cursor:pointer;">Send inquiry</button>
+      <p id="form-status" style="margin-top:14px;font-size:13.5px;color:var(--muted);"></p>
+    </form>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);">
+    <div style="border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px;">
+      <div class="idx" style="font-family:var(--f-mono);font-size:12px;color:var(--steel);margin-bottom:10px;">EMAIL</div>
+      <a href="mailto:sales@bestartek.com">sales@bestartek.com</a>
+    </div>
+    <div style="border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px;">
+      <div class="idx" style="font-family:var(--f-mono);font-size:12px;color:var(--steel);margin-bottom:10px;">PHONE</div>
+      <a href="tel:+8613476144359">0086-134-7614-4359</a>
+    </div>
+    <div style="border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px;">
+      <div class="idx" style="font-family:var(--f-mono);font-size:12px;color:var(--steel);margin-bottom:10px;">OFFICE</div>
+      <span style="font-size:14px;color:var(--muted);">2101, Building A, Xinghe Century, No. 3069 Caitian Road, Gangxia Community, Futian Street, Futian District, Shenzhen, Guangdong, China</span>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var params = new URLSearchParams(window.location.search);
+  var tier = params.get('tier');
+  var radios = document.querySelectorAll('input[name="tier"]');
+  function apply(val) {
+    var odm = (val === 'odm' || val === 'integration');
+    document.querySelectorAll('.odm-field').forEach(function (el) { el.style.display = odm ? 'block' : 'none'; });
+  }
+  radios.forEach(function (r) {
+    r.addEventListener('change', function () { apply(r.value); });
+    if (tier && r.value === tier) { r.checked = true; apply(tier); }
+  });
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('form-status').textContent = 'This form is not yet connected to an inbox — wire it up to Formspree or your CRM before launch. For now, email sales@bestartek.com directly.';
+  });
+});
+</script>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom:14px;">
+          <svg class="mark" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" stroke="#6FA8DC" stroke-width="1.4"/><path d="M7 13h5V7M14 13h5v6" stroke="#6FA8DC" stroke-width="1.4"/><circle cx="12" cy="13" r="1.4" fill="#6FA8DC"/></svg>
+          BESTAR
+        </a>
+        <p style="max-width:34ch;">Custom hardware OEM/ODM solution provider for Smart Devices and Eco Appliances, serving brand partners across Europe, the US, and Japan.</p>
+      </div>
+      <div class="footer-col">
+        <h4>SMART DEVICES</h4>
+        <ul class="footer-links">
+          <li><a href="smart-devices/tablet-pc.html">Tablet PC</a></li>
+          <li><a href="smart-devices/e-ink-tablet.html">E-ink Tablet</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ECO APPLIANCES</h4>
+        <ul class="footer-links">
+          <li><a href="eco-appliances/food-waste-disposers.html">Food Waste Disposers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="capabilities/index.html">Capabilities</a></li>
+          <li><a href="resources/index.html">Resources</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Bestar. All rights reserved.</span>
+      <span>bestartek.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

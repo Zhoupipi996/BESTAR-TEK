@@ -1,0 +1,36 @@
+<svg viewBox="0 0 640 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vertical four-step quality control diagram: Incoming Material Inspection, In-Process Inspection, Final Product Inspection, Pre-Shipment Random Sampling">
+<style>
+  .qc-lbl{font-family:'IBM Plex Mono',monospace;font-size:13px;fill:#101826;}
+  .qc-sub{font-family:'IBM Plex Sans',sans-serif;font-size:12px;fill:#5B6B7D;}
+  .qc-num{font-family:'IBM Plex Mono',monospace;font-size:13px;fill:#3E7CB1;}
+</style>
+<line x1="60" y1="30" x2="60" y2="310" stroke="#D7DEE6" stroke-width="2"/>
+<g>
+  <circle cx="60" cy="50" r="9" fill="#F6F8FA" stroke="#3E7CB1" stroke-width="2"/>
+  <text x="60" y="54" text-anchor="middle" class="qc-num">1</text>
+  <rect x="90" y="30" width="500" height="46" fill="#FFFFFF" stroke="#D7DEE6"/>
+  <text x="108" y="49" class="qc-lbl">Incoming Material Inspection</text>
+  <text x="108" y="65" class="qc-sub">Components and raw materials checked against spec before production begins</text>
+</g>
+<g>
+  <circle cx="60" cy="130" r="9" fill="#F6F8FA" stroke="#3E7CB1" stroke-width="2"/>
+  <text x="60" y="134" text-anchor="middle" class="qc-num">2</text>
+  <rect x="90" y="110" width="500" height="46" fill="#FFFFFF" stroke="#D7DEE6"/>
+  <text x="108" y="129" class="qc-lbl">In-Process Inspection</text>
+  <text x="108" y="145" class="qc-sub">Line checks during assembly to catch defects before they compound</text>
+</g>
+<g>
+  <circle cx="60" cy="210" r="9" fill="#F6F8FA" stroke="#3E7CB1" stroke-width="2"/>
+  <text x="60" y="214" text-anchor="middle" class="qc-num">3</text>
+  <rect x="90" y="190" width="500" height="46" fill="#FFFFFF" stroke="#D7DEE6"/>
+  <text x="108" y="209" class="qc-lbl">Final Product Inspection</text>
+  <text x="108" y="225" class="qc-sub">Completed units tested against full functional and cosmetic spec</text>
+</g>
+<g>
+  <circle cx="60" cy="290" r="9" fill="#3E7CB1" stroke="#3E7CB1" stroke-width="2"/>
+  <text x="60" y="294" text-anchor="middle" class="qc-num" fill="#fff">4</text>
+  <rect x="90" y="270" width="500" height="46" fill="#FFFFFF" stroke="#3E7CB1" stroke-width="1.4"/>
+  <text x="108" y="289" class="qc-lbl">Pre-Shipment Random Sampling</text>
+  <text x="108" y="305" class="qc-sub">Statistical sampling from the finished batch before it leaves the factory</text>
+</g>
+</svg>
