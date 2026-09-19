@@ -1,9 +1,0 @@
-Place these 3 files in this folder before deploying:
-
-1. favicon.png     — 32×32 px  — browser tab icon
-2. og-image.jpg    — 1200×630 px — social share preview (LinkedIn/WhatsApp)
-3. logo.png        — 200×60 px  — Schema.org structured data logo
-
-favicon.png tip:    Use the green BT logo mark square
-og-image.jpg tip:   Brand green (#4CBB17) background + BESTAR TEK logo in white
-                    + tagline "Custom Android Tablet & Signage OEM/ODM"
