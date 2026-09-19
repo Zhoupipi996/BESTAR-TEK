@@ -117,3 +117,40 @@ For the `bestartek.com` custom domain, add a `CNAME` file containing
 4. Fill in Incoterms/export documentation on Logistics & Delivery.
 5. Decide whether to name manufacturing partner factories (needs their
    authorization first, per the brief).
+
+---
+
+## Batch 3 — SEO/GEO pass + full catalogs + Resources restructure
+
+Based on your live edits at zhoupipi996.github.io/BESTAR-TEK (I couldn't fetch that URL directly — search didn't index it yet — so this batch builds on the local copy from Batch 2 plus your change list).
+
+**Site-wide**
+- "Bestar" → "BESTAR" everywhere.
+- "Stock" → "Ready Inventory" everywhere it described inventory (tier names, CTAs, the service-progression SVG label). Internal values (`tier=stock` URL param, `tier-icon-01-stock.svg` filename) left as-is since they're not user-visible.
+- Removed "Tier 4 (System Integration) applies to Smart Devices only" from the Eco Appliances page.
+- "Building a private-label composter line?" → "...food cycler line?"
+- Home hero: "Over 7 yrs Custom hardware & OEM/ODM experience" / "EU · US · JP · KR Core export markets".
+- Home Division 01 now lists 3 categories in order: Tablet PC, Interactive Digital Signage, E-ink Tablet.
+
+**New: Interactive Digital Signage is now its own category page** (`smart-devices/digital-signage.html`), pulled out of the old Tablet PC page, with all 6 real signage products from bestartek.com.
+
+**Full real catalogs** (previously partial):
+- Tablet PC: all 12 models from bestartek.com/products/, real images + spec text + source links.
+- Digital Signage: all 6 models, same treatment.
+- Electric Food Waste Disposers: all 8 capacity series (2L, 2.8L, 3L, 3.8L, 4.8L, 4L×2, 5.5L) with **real product photos** hotlinked from foodcycler-manufacturer.top's CDN — per your go-ahead to use that site's images/content directly, I stopped placeholder-blocking them.
+
+**SEO / GEO keyword pass** (as requested — Electric Food Waste Disposer primary, Electric Food Cycler / Electric Kitchen Composter secondary):
+- Disposer page: primary keyword in H1, first paragraph, title tag, meta description, URL slug; secondary terms woven into subheads, alt text, and a new on-page FAQ block with `FAQPage` schema. Product schema now includes `alternateName` for the two secondary terms.
+- Tablet PC / Digital Signage pages: primary "OEM Android Tablet PC" / "Interactive Digital Signage", secondary/long-tail terms ("bulk Android tablets for business", "wall-mounted digital display", "white-label Android tablet") worked into H1s, alt text, and body copy.
+
+**Resources restructured into two division hubs** (your concern about mixing content was right):
+- `resources/index.html` is now a simple hub linking to two sub-hubs.
+- `resources/smart-devices/` — 3 articles (1 fully placeholder-built, 2 stubs), real titles from bestartek.com's news section.
+- `resources/eco-appliances/` — 6 articles listed, 1 fully placeholder-built ("Why Choose OEM for Your Electric Food Waste Disposer Brand?"), titles and dates ported from foodcycler-manufacturer.top's blog.
+- Each division hub is independently expandable — adding a new post to one never touches the other's list.
+
+**Still pending / needs your input**
+- The two AI lifestyle scenes (classroom, kitchen) — still no image-gen tool available here; prompts are on the pages.
+- Real certification badge artwork (ISO/CE/PSE/etc.) — still placeholder slots everywhere.
+- E-ink Tablet — still empty on the source site, no specs invented.
+- Most Eco Appliances article pages are listed but not yet built out (only the OEM one is).
