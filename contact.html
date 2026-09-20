@@ -169,6 +169,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   var params = new URLSearchParams(window.location.search);
   var tier = params.get('tier');
+  var model = params.get('model');
+  if (model) {
+    var modelField = document.getElementById('model');
+    if (modelField) modelField.value = model;
+  }
   var radios = document.querySelectorAll('input[name="tier"]');
   function apply(val) {
     var odm = (val === 'odm' || val === 'integration');

@@ -154,3 +154,26 @@ Based on your live edits at zhoupipi996.github.io/BESTAR-TEK (I couldn't fetch t
 - Real certification badge artwork (ISO/CE/PSE/etc.) — still placeholder slots everywhere.
 - E-ink Tablet — still empty on the source site, no specs invented.
 - Most Eco Appliances article pages are listed but not yet built out (only the OEM one is).
+
+---
+
+## Batch 4 — Product detail pages, contact prefill, disposer page edits, real article content
+
+**1. Every product now has its own permanent detail page** (no more depending on bestartek.com staying online):
+- `smart-devices/tablet-pc/<slug>.html` — 12 pages, one per tablet model
+- `smart-devices/digital-signage/<slug>.html` — 6 pages, one per signage model
+- Each has: full spec table, unique ~100-word keyword-rich description, mini 4-tier ladder, 3 related products, and its own Product schema.
+- Listing pages (`tablet-pc.html`, `digital-signage.html`) now link to these instead of external bestartek.com URLs, and every product card got a **"Send Inquiry" button** next to "View Full Specs" — same layout across all 18 cards.
+- Contact form now reads a `?model=` URL param and pre-fills the "Product model" field, so a click-through from any product card/detail page arrives pre-filled.
+
+**2. Eco Appliances / Electric Food Waste Disposers page:**
+- Removed the "Sourcing note" paragraph.
+- Added an **"Our Advantages"** heading above the stat row, with two new items: *Modular Detachable & Washable Design (Patent)* and *Vertical Manufacturer — Self-Owned Motor & Mold Factory*, alongside the existing Capacity/Noise/Motor/SKUs stats (now 6 items total).
+
+**3. Resources articles now have real content**, not placeholder shells — all 4 built pages rewritten with 400–600 words each, H2-structured for GEO, internal links to relevant product pages, and `FAQPage` schema blocks:
+- Why Choose OEM for Your Electric Food Waste Disposer Brand?
+- Understanding GMS Certification for B2B Android Tablets
+- What is PoE and Why Your Smart Home Control Panel Needs It?
+- OEM vs. ODM Android Tablets: Which Is Best?
+
+**Still pending:** the 5 other Eco Appliances article titles listed on the Resources hub still don't have built pages (only "Why Choose OEM..." does) — say the word and I'll write those out too.
