@@ -177,3 +177,20 @@ Based on your live edits at zhoupipi996.github.io/BESTAR-TEK (I couldn't fetch t
 - OEM vs. ODM Android Tablets: Which Is Best?
 
 **Still pending:** the 5 other Eco Appliances article titles listed on the Resources hub still don't have built pages (only "Why Choose OEM..." does) — say the word and I'll write those out too.
+
+---
+
+## Batch 5 — Real technical spec pages, Eco Appliances fixes, Resources content expansion
+
+**1. Every Tablet PC and Digital Signage product now has a real, permanent detail page** with the layout you asked for:
+- **Overview** section first (condensed, in our own words — not copy-pasted from bestartek.com — covering what the product is, key differentiators, and target use case), with a scannable "Key Features" bullet list underneath (good for GEO/AI-answer extraction).
+- **Technical Specification** section below it, split into three sub-tables exactly matching bestartek.com's own structure: **Technical Parameter**, **Hardware Specification**, **Software Specification**. All values were fetched directly from each product's real page on bestartek.com and kept accurate — nothing invented.
+- Product JSON-LD now includes `additionalProperty` entries pulled from the real spec data, for richer structured data.
+- This layout is identical across all 18 pages (12 Tablet PC + 6 Digital Signage) for consistency.
+- Every product card on the listing pages still has both **"View Full Specs"** (→ the new internal detail page) and **"Send Inquiry"** buttons, same layout throughout.
+
+**2. Eco Appliances / Electric Food Waste Disposers page:** "DESIGN" advantage label renamed to **"Patent"**.
+
+**3. Resources — Smart Devices Insights expanded from 3 to 5 real articles**, pulling from bestartek.com's actual `/news/` section (two more real posts existed there: the 12.2" tablet launch and the digital calendar launch) — all rewritten in our own words, not copy-pasted.
+
+**Resources — Eco Appliances Insights: all 6 listed articles now have real, working pages** (previously only 1 of 6 was built; the other 5 were dead links). Content is **original** — written by us, not reposted from foodcycler-manufacturer.top/blog, so their site's own traffic and SEO aren't affected. One flag: the original "Market Size 2025–2030... 18% CAGR" article blurb had an invented statistic — I removed it and rewrote that article to discuss general demand drivers instead, with an editorial note explaining why no market-size figure is cited (we don't have a verified source for one).

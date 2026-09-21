@@ -329,3 +329,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--steel-bright);outli
 .compare-table th{background:var(--paper-alt);font-family:var(--f-mono);font-weight:500;font-size:12.5px;color:var(--ink);}
 .compare-table td.num{font-family:var(--f-mono);}
 .table-scroll{overflow-x:auto;}
+
+/* ---------- Product detail: Overview + Technical Specification ---------- */
+.spec-group{ margin-bottom:28px; }
+.spec-group:last-child{ margin-bottom:0; }
+.spec-group h4{
+  font-family: var(--f-mono); font-size:13px; color: var(--steel); text-transform:uppercase;
+  letter-spacing:0.03em; margin-bottom:10px;
+}
+.spec-group .compare-table{ margin-top:0; font-size:13px; }
+.spec-group .compare-table th{ width:34%; }
+.overview-features{ list-style:none; padding:0; margin:18px 0 0; }
+.overview-features li{
+  padding:9px 0 9px 20px; border-top:1px solid var(--line); font-size:14px; position:relative;
+}
+.overview-features li::before{ content:"—"; position:absolute; left:0; color: var(--steel); }
+.overview-features li:first-child{ border-top:none; }
