@@ -194,3 +194,20 @@ Based on your live edits at zhoupipi996.github.io/BESTAR-TEK (I couldn't fetch t
 **3. Resources — Smart Devices Insights expanded from 3 to 5 real articles**, pulling from bestartek.com's actual `/news/` section (two more real posts existed there: the 12.2" tablet launch and the digital calendar launch) — all rewritten in our own words, not copy-pasted.
 
 **Resources — Eco Appliances Insights: all 6 listed articles now have real, working pages** (previously only 1 of 6 was built; the other 5 were dead links). Content is **original** — written by us, not reposted from foodcycler-manufacturer.top/blog, so their site's own traffic and SEO aren't affected. One flag: the original "Market Size 2025–2030... 18% CAGR" article blurb had an invented statistic — I removed it and rewrote that article to discuss general demand drivers instead, with an editorial note explaining why no market-size figure is cited (we don't have a verified source for one).
+
+---
+
+## Batch 6 — Repositioning, real factory/cert imagery, clickable breadcrumbs, Patent fix
+
+**1. Repositioning — "sourcing" language removed sitewide.** BESTAR is no longer framed as working "in strategic partnership with certified manufacturing facilities" or shipping products "through our manufacturing partner." Rewritten across index.html, about.html, capabilities/manufacturing-partners.html (retitled "Certifications & Compliance" — file path kept for link stability), eco-appliances/index.html, eco-appliances/food-waste-disposers.html, faq.html, and 5 Resources articles. New positioning: compliant factories, standardized certification, qualified product quality, after-sales support, hands-on full-process service from factory to export, transparent factory pricing, flexible MOQ. Smart Devices copy leads with customer-need-driven customization + certification testing assistance + air/sea/express freight. Eco Appliances copy leads with internationally certified SKU range + patented design + flexible MOQ + freight.
+
+**2. Real imagery added** (previously placeholder "real badge pending" boxes and no factory photos at all):
+- All 9 Smart Devices certification badges (ISO 9001, ISO 14001, CE, FCC, TELEC, EMC, LVD, UN38.3, MSDS) are now real PNG badges from bestartek.com, on Home, About, Capabilities, Tablet PC, and Digital Signage pages.
+- Added a real BESTAR TEK factory photo + 4 real QC/testing equipment photos (aging test, temp/humidity chamber, GPS signal tester, battery voltage tester) to About and Capabilities pages.
+- Added 3 real Eco Appliances manufacturing photos (factory overview, assembly line, certification wall) to the Disposer page and Capabilities page.
+
+**3. Breadcrumbs are now clickable sitewide** — all 18 product detail pages plus 20 other pages (Capabilities subpages, Resources articles/hubs, Eco Appliances, Smart Devices category pages) had their "X › Y › Z" trail turned into real links back to each parent page.
+
+**4. Eco Appliances "Patent" advantage item** now reads just "Modular Detachable & Washable Design" under the PATENT label (dropped the redundant "(Patent)" suffix).
+
+**Full audit + recommendations + manual action-item list delivered in chat, not as a separate file** — see conversation history.
