@@ -86,6 +86,7 @@ def foot(root):
           <li><a href="{root}resources/index.html">Resources</a></li>
           <li><a href="{root}faq.html">FAQ</a></li>
           <li><a href="{root}contact.html">Contact</a></li>
+          <li><a href="{root}privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
     </div>

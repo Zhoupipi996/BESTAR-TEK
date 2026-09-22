@@ -361,3 +361,23 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--steel-bright);outli
 .story-stats .l{ font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1.4; }
 .story-stats .l b{ color:var(--ink); font-weight:600; }
 @media (max-width:640px){ .story-stats{ grid-template-columns:1fr; } }
+
+/* ---------- QC step list (HTML/CSS, replaces SVG-baked text for correct font inheritance) ---------- */
+.qc-steps{ counter-reset:qc; margin-top:8px; }
+.qc-step{
+  display:grid; grid-template-columns:64px 1fr; gap:20px; padding:22px 0; border-top:1px solid var(--line);
+}
+.qc-step:first-child{ border-top:none; }
+.qc-step .qc-num{
+  font-family:var(--f-mono); font-size:1.4rem; color:var(--steel); line-height:1;
+}
+.qc-step.final .qc-num{ color:var(--white); background:var(--steel); width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:50%; font-size:1.1rem; }
+.qc-step h4{ font-family:var(--f-display); font-size:17px; margin-bottom:6px; color:var(--ink); }
+.qc-step p{ font-size:14px; color:var(--muted); margin:0; max-width:60ch; }
+
+.equip-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:24px; }
+.equip-grid figure{ margin:0; border:1px solid var(--line); background:var(--white); }
+.equip-grid img{ width:100%; height:150px; object-fit:cover; display:block; }
+.equip-grid figcaption{ font-family:var(--f-mono); font-size:11.5px; color:var(--muted); padding:10px 12px; border-top:1px solid var(--line); }
+@media (max-width:760px){ .equip-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:480px){ .equip-grid{ grid-template-columns:1fr 1fr; } .qc-step{ grid-template-columns:44px 1fr; gap:14px; } }
