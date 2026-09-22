@@ -211,3 +211,19 @@ Based on your live edits at zhoupipi996.github.io/BESTAR-TEK (I couldn't fetch t
 **4. Eco Appliances "Patent" advantage item** now reads just "Modular Detachable & Washable Design" under the PATENT label (dropped the redundant "(Patent)" suffix).
 
 **Full audit + recommendations + manual action-item list delivered in chat, not as a separate file** — see conversation history.
+
+---
+
+## Batch 7 — About page rebuilt per approved copy (PDF spec)
+
+Full rebuild of about.html using the exact copy supplied, following every structural and content red-line requirement:
+
+- **Hero**: exact intro copy.
+- **Our Story**: "2024" (company founding) and "7+ yrs" (founder's personal pre-BESTAR experience) shown as two visually distinct stat blocks so they can't be misread as "the company has 7 years of history." Optional Founder/CEO card included as a clearly-marked placeholder (no AI-generated photo — needs a real one from you, or delete the card).
+- **Our Expertise**: Smart Devices and Eco Appliances shown as two separate cards, not one blended narrative. Smart Devices card uses the 4 real cert badges (ISO9001, ISO14001, CE, FCC). Eco Appliances card intentionally does **not** use any third-party certificate badge — it uses a neutral hand-built "Quality Assured" icon instead, per the red-line rule.
+- **Quality Commitment** and **Team** sections: exact copy, kept general (no invented stats, no team photos, no named staff besides the optional Founder/CEO slot).
+- **CTA**: "Talk to Us" → Contact, "Explore Our Solutions" → Solutions.
+- No factory name appears anywhere on the page, and nothing implies Eco Appliances is a subsidiary of a named third party.
+- Removed the old About-page company-details table (address/phone/MOQ) since it wasn't part of this spec and that info already lives on Contact/FAQ — nothing lost, just decluttered to match the approved structure.
+
+**One inconsistency worth flagging:** this page now says BESTAR was **founded in 2024**, while other pages (Home hero stat, Capabilities, FAQ) still say the company has been "operating since 2018" — that 2018 figure came from bestartek.com's own real site content in an earlier batch, before this new founding narrative existed. I didn't touch those other pages since this request was scoped to About only, but you'll probably want the 2018 mentions updated or reconciled with the "founded 2024 / founder's 7+ years" story before launch.
